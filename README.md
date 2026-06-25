@@ -2,15 +2,11 @@
 
 Official implementation for **DPFairFormer**, a polarity-aware signed graph learning model for mitigating degree-polarity bias in signed link sign prediction.
 
-The repository contains the cleaned model code and the processed datasets used by the paper. Early exploratory scripts, rebuttal-only experiments, checkpoints, logs, and figure-generation files are intentionally omitted.
-
 ## Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
-
-The core training path uses PyTorch, NumPy, SciPy, scikit-learn, PyYAML, and tqdm. It does not require PyTorch Geometric.
 
 ## Repository Structure
 
@@ -38,8 +34,6 @@ Each dataset file is a whitespace- or comma-separated edge list:
 ```text
 src dst sign_or_rating
 ```
-
-For signed social networks, positive values are mapped to positive edges and negative values to negative edges. For Amazon-Book, ratings >= 4 are treated as positive edges and ratings <= 2 as negative edges.
 
 ## Quick Start
 
@@ -73,13 +67,6 @@ python -m dpfair.test --checkpoint dpfair/runs/<run_name>/best.pt
 
 Reported metrics include AUC, F1, macro-F1, accuracy, and DeltaDPSP. DeltaDPSP measures the signed prediction-rate gap between degree-polarity edge groups.
 
-## Ablations
-
-```bash
-python -m dpfair.train --dataset Bitcoinotc --model dpfairformer --ablation no_transfer
-python -m dpfair.train --dataset Bitcoinotc --model dpfairformer --ablation no_fairness
-python -m dpfair.train --dataset Bitcoinotc --model dpfairformer --ablation no_transformer
-```
 
 ## Citation
 
