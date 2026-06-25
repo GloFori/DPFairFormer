@@ -1,0 +1,21 @@
+model:
+  name: dpfairsgnn
+
+loss:
+  lamb: 5.0
+  mu: 0.01
+  eta: 0.05
+
+train:
+  epochs: 300
+  patience: 80
+  lr: 0.003
+  weight_decay: 0.0005
+  grad_clip: 1.0
+
+eval:
+  select_metric: tradeoff
+  tradeoff_alpha: 0.5
+
+logging:
+  output_dir: dpfair/runs

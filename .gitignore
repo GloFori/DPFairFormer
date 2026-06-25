@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.ckpt
+
+dpfair/runs/
+runs/
+outputs/
+checkpoints/
+
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
